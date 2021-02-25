@@ -12,14 +12,6 @@ else
     exit 1
 fi
 
-# Back up znc.pen if it exists
-# if [[ -s ${letsencryptdir}/znc.pem ]]; then
-#    mv ${letsencryptdir}/znc.pem ${letsencryptdir}/znc.pem.old
-# else
-#	echo "znc.pem is missing from let's encrypt dir"
-#	echo "maybe it should be?"
-# fi
-
 # ZNC expects everything in one PEM, let's concatenate some files
 if [[ -r ${letsencryptdir}/privkey.pem ]] && [[ -r ${letsencryptdir}/cert.pem ]]; then
     cp ${letsencryptdir}/privkey.pem ${letsencryptdir}/znc.pem
